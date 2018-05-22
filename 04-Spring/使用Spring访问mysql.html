@@ -1,0 +1,1122 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用Spring访问mysql · Notes</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="YJJ">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex-toc/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="异常处理.html" />
+    
+    
+    <link rel="prev" href="tmp.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://yangjinjie.github.io/notes/" target="_blank" class="custom-link">notes</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://yangjinjie.github.io/python_notes/" target="_blank" class="custom-link">python</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://yangjinjie.github.io/java_notes/" target="_blank" class="custom-link">java</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../SUMMARY.html">
+            
+                <a href="../SUMMARY.html">
+            
+                    
+                    SUMMARY
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-Java基础/">
+            
+                <a href="../01-Java基础/">
+            
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../01-Java基础/01-快速开始.html">
+            
+                <a href="../01-Java基础/01-快速开始.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../01-Java基础/02-类和对象.html">
+            
+                <a href="../01-Java基础/02-类和对象.html">
+            
+                    
+                    类和对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../01-Java基础/03-基本数据类型.html">
+            
+                <a href="../01-Java基础/03-基本数据类型.html">
+            
+                    
+                    基本数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../01-Java基础/04-变量类型.html">
+            
+                <a href="../01-Java基础/04-变量类型.html">
+            
+                    
+                    变量类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../01-Java基础/05-修饰符.html">
+            
+                <a href="../01-Java基础/05-修饰符.html">
+            
+                    
+                    修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../01-Java基础/06-运算符.html">
+            
+                <a href="../01-Java基础/06-运算符.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../01-Java基础/07-循环结构.html">
+            
+                <a href="../01-Java基础/07-循环结构.html">
+            
+                    
+                    循环结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../01-Java基础/08-分支结构.html">
+            
+                <a href="../01-Java基础/08-分支结构.html">
+            
+                    
+                    分支结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../01-Java基础/13-数组.html">
+            
+                <a href="../01-Java基础/13-数组.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../01-Java基础/14-日期时间.html">
+            
+                <a href="../01-Java基础/14-日期时间.html">
+            
+                    
+                    日期时间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../01-Java基础/16-方法.html">
+            
+                <a href="../01-Java基础/16-方法.html">
+            
+                    
+                    方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../01-Java基础/17-IO.html">
+            
+                <a href="../01-Java基础/17-IO.html">
+            
+                    
+                    IO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../01-Java基础/18-Scanner类.html">
+            
+                <a href="../01-Java基础/18-Scanner类.html">
+            
+                    
+                    Scanner类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../01-Java基础/19-异常.html">
+            
+                <a href="../01-Java基础/19-异常.html">
+            
+                    
+                    异常
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-面向对象/">
+            
+                <a href="../02-面向对象/">
+            
+                    
+                    面向对象
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../02-面向对象/01-继承.html">
+            
+                <a href="../02-面向对象/01-继承.html">
+            
+                    
+                    继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../02-面向对象/02-重写与重载.html">
+            
+                <a href="../02-面向对象/02-重写与重载.html">
+            
+                    
+                    重写与重载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../02-面向对象/03-多态.html">
+            
+                <a href="../02-面向对象/03-多态.html">
+            
+                    
+                    多态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../02-面向对象/04-抽象类.html">
+            
+                <a href="../02-面向对象/04-抽象类.html">
+            
+                    
+                    抽象类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../02-面向对象/05-封装.html">
+            
+                <a href="../02-面向对象/05-封装.html">
+            
+                    
+                    封装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../02-面向对象/06-接口.html">
+            
+                <a href="../02-面向对象/06-接口.html">
+            
+                    
+                    接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../02-面向对象/07-包.html">
+            
+                <a href="../02-面向对象/07-包.html">
+            
+                    
+                    包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../02-面向对象/tmp.html">
+            
+                <a href="../02-面向对象/tmp.html">
+            
+                    
+                    tmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-高级教程/">
+            
+                <a href="../03-高级教程/">
+            
+                    
+                    高级教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-高级教程/01-数据结构.html">
+            
+                <a href="../03-高级教程/01-数据结构.html">
+            
+                    
+                    数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../03-高级教程/02-集合框架.html">
+            
+                <a href="../03-高级教程/02-集合框架.html">
+            
+                    
+                    集合框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../03-高级教程/03-泛型.html">
+            
+                <a href="../03-高级教程/03-泛型.html">
+            
+                    
+                    泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../03-高级教程/04-序列化.html">
+            
+                <a href="../03-高级教程/04-序列化.html">
+            
+                    
+                    序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../03-高级教程/05-网络编程.html">
+            
+                <a href="../03-高级教程/05-网络编程.html">
+            
+                    
+                    网络编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../03-高级教程/06-发送邮件.html">
+            
+                <a href="../03-高级教程/06-发送邮件.html">
+            
+                    
+                    发送邮件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../03-高级教程/07-多线程编程.html">
+            
+                <a href="../03-高级教程/07-多线程编程.html">
+            
+                    
+                    多线程编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../03-高级教程/08-JVM.html">
+            
+                <a href="../03-高级教程/08-JVM.html">
+            
+                    
+                    JVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../03-高级教程/09-Collections.html">
+            
+                <a href="../03-高级教程/09-Collections.html">
+            
+                    
+                    Collections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../03-高级教程/10-Map.html">
+            
+                <a href="../03-高级教程/10-Map.html">
+            
+                    
+                    Map
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../03-高级教程/11-Set.html">
+            
+                <a href="../03-高级教程/11-Set.html">
+            
+                    
+                    Set
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="IntelliJ IDEA使用.html">
+            
+                <a href="IntelliJ IDEA使用.html">
+            
+                    
+                    IntelliJ IDEA使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Swagger2构建RESTful API.html">
+            
+                <a href="Swagger2构建RESTful API.html">
+            
+                    
+                    Swagger2构建RESTful API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="tmp.html">
+            
+                <a href="tmp.html">
+            
+                    
+                    tmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.4" data-path="使用Spring访问mysql.html">
+            
+                <a href="使用Spring访问mysql.html">
+            
+                    
+                    使用Spring访问mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="异常处理.html">
+            
+                <a href="异常处理.html">
+            
+                    
+                    异常处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="模板引擎.html">
+            
+                <a href="模板引擎.html">
+            
+                    
+                    模板引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="注解.html">
+            
+                <a href="注解.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../05-lib/">
+            
+                <a href="../05-lib/">
+            
+                    
+                    lib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-lib/Lombok.html">
+            
+                <a href="../05-lib/Lombok.html">
+            
+                    
+                    Lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-lib/SLF4J.html">
+            
+                <a href="../05-lib/SLF4J.html">
+            
+                    
+                    SLF4J
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../tmp.html">
+            
+                <a href="../tmp.html">
+            
+                    
+                    tmp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../测试题.html">
+            
+                <a href="../测试题.html">
+            
+                    
+                    测试题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >使用Spring访问mysql</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;mysql"><b></b>&#x8BBF;&#x95EE;mysql</a></li><ul><li><span class="title-icon "></span><a href="#table-of-contents"><b></b>Table of contents</a></li><li><span class="title-icon "></span><a href="#&#x524D;&#x63D0;"><b></b>&#x524D;&#x63D0;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><b></b>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;applicationproperties&#x6587;&#x4EF6;"><b></b>&#x521B;&#x5EFA;application.properties&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;-entity-&#x6A21;&#x578B;"><b></b>&#x521B;&#x5EFA; @Entity &#x6A21;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;repository"><b></b>&#x521B;&#x5EFA;repository</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;controller"><b></b>&#x521B;&#x5EFA;controller</a></li><li><span class="title-icon "></span><a href="#&#x6253;&#x5305;"><b></b>&#x6253;&#x5305;</a></li><li><span class="title-icon "></span><a href="#&#x6D4B;&#x8BD5;&#x5E94;&#x7528;"><b></b>&#x6D4B;&#x8BD5;&#x5E94;&#x7528;</a></li></ul></ul></div><a href="#&#x8BBF;&#x95EE;mysql" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x8BBF;&#x95EE;mysql"><a name="&#x8BBF;&#x95EE;mysql" class="anchor-navigation-ex-anchor" href="#&#x8BBF;&#x95EE;mysql"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBF;&#x95EE;mysql</h1>
+<ul>
+<li><a href="https://spring.io/guides/gs/accessing-data-mysql/" target="_blank">&#x53C2;&#x8003;&#x5730;&#x5740;</a></li>
+<li><a href="https://github.com/spring-guides/gs-accessing-data-mysql" target="_blank">GitHub &#x9879;&#x76EE;&#x5730;&#x5740;</a></li>
+</ul>
+<h2 id="table-of-contents"><a name="table-of-contents" class="anchor-navigation-ex-anchor" href="#table-of-contents"><i class="fa fa-link" aria-hidden="true"></i></a>Table of contents</h2>
+<div id="anchor-navigation-ex-pagetop-navbar"><ul><li><span class="title-icon "></span><a href="#&#x8BBF;&#x95EE;mysql"><b></b>&#x8BBF;&#x95EE;mysql</a></li><ul><li><span class="title-icon "></span><a href="#table-of-contents"><b></b>Table of contents</a></li><li><span class="title-icon "></span><a href="#&#x524D;&#x63D0;"><b></b>&#x524D;&#x63D0;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><b></b>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;applicationproperties&#x6587;&#x4EF6;"><b></b>&#x521B;&#x5EFA;application.properties&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;-entity-&#x6A21;&#x578B;"><b></b>&#x521B;&#x5EFA; @Entity &#x6A21;&#x578B;</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;repository"><b></b>&#x521B;&#x5EFA;repository</a></li><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;controller"><b></b>&#x521B;&#x5EFA;controller</a></li><li><span class="title-icon "></span><a href="#&#x6253;&#x5305;"><b></b>&#x6253;&#x5305;</a></li><li><span class="title-icon "></span><a href="#&#x6D4B;&#x8BD5;&#x5E94;&#x7528;"><b></b>&#x6D4B;&#x8BD5;&#x5E94;&#x7528;</a></li></ul></ul></div>
+
+<h2 id="&#x524D;&#x63D0;"><a name="&#x524D;&#x63D0;" class="anchor-navigation-ex-anchor" href="#&#x524D;&#x63D0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x524D;&#x63D0;</h2>
+<ul>
+<li><code>JDK 1.8</code>&#x6216;&#x66F4;&#x9AD8;</li>
+<li><code>Gradle 2.3+</code> or <code>Maven 3.0+</code></li>
+<li>IDE</li>
+</ul>
+<p>&#x5C06;&#x9879;&#x76EE;&#x4E0B;<code>initial</code>&#x5BFC;&#x5165;&#x5230;IntelliJ IDEA</p>
+<pre><code class="lang-shell">git clone https://github.com/spring-guides/gs-accessing-data-mysql.git
+cd into gs-accessing-data-mysql/initial
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><a name="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</h2>
+<pre><code class="lang-sql">mysql&gt; create database db_example;
+-- &#x521B;&#x5EFA;&#x7528;&#x6237;
+mysql&gt; create user &apos;springuser&apos;@&apos;localhost&apos; identified by &apos;111111&apos;;
+-- &#x6388;&#x6743;, &#x540E;&#x671F;&#x6839;&#x636E;&#x9700;&#x6C42;&#x6388;&#x6743;
+mysql&gt; grant all on db_example.* to &apos;springuser&apos;@&apos;%&apos;;
+</code></pre>
+<h2 id="&#x521B;&#x5EFA;applicationproperties&#x6587;&#x4EF6;"><a name="&#x521B;&#x5EFA;applicationproperties&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;applicationproperties&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;application.properties&#x6587;&#x4EF6;</h2>
+<p>Spring Boot&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;<code>H2</code>&#x6570;&#x636E;&#x5E93;, &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x66F4;&#x6539;&#x4E3A;mysql, &#x5E76;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x5E93;&#x76F8;&#x5173;&#x8BBE;&#x7F6E;.</p>
+<p>&#x521B;&#x5EFA;&#x6587;&#x4EF6;</p>
+<p><code>src/main/resources/application.properties</code></p>
+<pre><code class="lang-java">spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:mysql:<span class="hljs-comment">//localhost:3306/db_example?verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false</span>
+spring.datasource.username=springuser
+spring.datasource.password=<span class="hljs-number">111111</span>
+</code></pre>
+<blockquote>
+<p><code>spring.jpa.hibernate.ddl-auto</code>&#x9009;&#x9879;</p>
+</blockquote>
+<p><code>spring.jpa.hibernate.ddl-auto</code>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x4E3A;<code>none</code>, <code>update</code>, <code>create</code>, <code>create-drop</code>, &#x5177;&#x4F53;&#x8BF4;&#x660E;&#x67E5;&#x9605;<code>Hibernate</code>&#x6587;&#x6863;</p>
+<p><code>none</code> &#x4F7F;&#x7528; MySQL &#x6570;&#x636E;&#x5E93;&#x65F6;, &#x9ED8;&#x8BA4;&#x503C;&#x4E3A; <code>none</code>, &#x4E0D;&#x66F4;&#x6539;&#x6570;&#x636E;&#x5E93;&#x7ED3;&#x6784;.
+<code>update</code> Hibernate&#x4F1A;&#x6839;&#x636E;&#x7ED9;&#x4E88;&#x7684;&#x5B9E;&#x4F53;&#x7ED3;&#x6784;&#x66F4;&#x6539;&#x6570;&#x636E;&#x5E93;.
+<code>create</code> &#x6BCF;&#x6B21;&#x90FD;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;, &#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;.
+<code>create-drop</code> &#x521B;&#x5EFA;&#x5E76;&#x4E14;&#x5728; <code>SessionFactory</code> &#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;.</p>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;<code>create</code>, &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x8FD8;&#x6CA1;&#x6709;&#x521B;&#x5EFA;&#x8868;&#x7ED3;&#x6784;, &#x8FD0;&#x884C;&#x4E00;&#x6B21;&#x4E4B;&#x540E;, &#x9700;&#x8981;&#x6839;&#x636E;&#x7A0B;&#x5E8F;&#x628A;<code>spring.jpa.hibernate.ddl-auto</code>&#x8BBE;&#x7F6E;&#x4E3A;<code>update</code>&#x6216;<code>none</code>, &#x5F53;&#x4F60;&#x60F3;&#x4FEE;&#x6539;&#x8868;&#x7ED3;&#x6784;&#x7684;&#x65F6;&#x5019;, &#x4F7F;&#x7528;<code>update</code>.</p>
+<p>Spring&#x4E3A; <code>H2</code>&#x6216;&#x8005;&#x5176;&#x4ED6;&#x5D4C;&#x5165;&#x7684;&#x6570;&#x636E;&#x5E93;&#x4F7F;&#x7528;&#x7684;&#x662F; <code>create-drop</code>, &#x5176;&#x4ED6;&#x7684;&#x4E3A;<code>none</code>, &#x6BD4;&#x5982; MySQL</p>
+<p>&#x751F;&#x4EA7;&#x4E2D;, &#x63A8;&#x8350;&#x628A;&#x8BE5;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;<code>none</code>, &#x5E76;&#x4E14;&#x56DE;&#x6536;&#x7528;&#x6237;&#x6743;&#x9650;, &#x7ED9;&#x4E0E;<code>SELECT, UPDATE, INSERT, DELETE</code>&#x6743;&#x9650;&#x5373;&#x53EF;.</p>
+<h2 id="&#x521B;&#x5EFA;-entity-&#x6A21;&#x578B;"><a name="&#x521B;&#x5EFA;-entity-&#x6A21;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;-entity-&#x6A21;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA; @Entity &#x6A21;&#x578B;</h2>
+<p><code>src/main/java/hello/User.java</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">import</span> javax.persistence.Entity;
+<span class="hljs-keyword">import</span> javax.persistence.GeneratedValue;
+<span class="hljs-keyword">import</span> javax.persistence.GenerationType;
+<span class="hljs-keyword">import</span> javax.persistence.Id;
+
+<span class="hljs-meta">@Entity</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+    <span class="hljs-meta">@Id</span>
+    <span class="hljs-meta">@GeneratedValue</span>(strategy = GenerationType.AUTO)
+    <span class="hljs-keyword">private</span> Integer id;
+
+    <span class="hljs-keyword">private</span> String name;
+
+    <span class="hljs-keyword">private</span> String email;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> Integer <span class="hljs-title">getId</span><span class="hljs-params">()</span></span>{
+            <span class="hljs-keyword">return</span> id;
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(Integer id)</span></span>{
+            <span class="hljs-keyword">this</span>.id = id;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span></span>{
+            <span class="hljs-keyword">return</span> name;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span></span>{
+            <span class="hljs-keyword">this</span>.name = name;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getEmail</span><span class="hljs-params">()</span></span>{
+            <span class="hljs-keyword">return</span> email;
+        }
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setEmail</span><span class="hljs-params">(String email)</span></span>{
+            <span class="hljs-keyword">this</span>.email = email;
+        }
+
+}
+</code></pre>
+<p>&#x5B9E;&#x4F8B;&#x7C7B;,  <code>Hibernate</code>&#x5C06;&#x81EA;&#x52A8;&#x8F6C;&#x6362;&#x6210;&#x8868;&#x7ED3;&#x6784;.</p>
+<h2 id="&#x521B;&#x5EFA;repository"><a name="&#x521B;&#x5EFA;repository" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;repository"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;repository</h2>
+<p><code>src/main/java/hello/UserRepository.java</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">import</span> org.springframework.data.repository.CrudRepository;
+<span class="hljs-keyword">import</span> hello.User;
+
+<span class="hljs-comment">// CRUD refers Create, Read, Update, Delete</span>
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">UserRepository</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">CrudRepository</span>&lt;<span class="hljs-title">User</span>, <span class="hljs-title">Long</span>&gt; </span>{
+
+}
+</code></pre>
+<p>repository&#x63A5;&#x53E3;, this will be automatically implemented by Spring in a bean with the same name with changing case The bean name will be userRepository</p>
+<h2 id="&#x521B;&#x5EFA;controller"><a name="&#x521B;&#x5EFA;controller" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;controller"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;controller</h2>
+<p><code>src/main/java/hello/MainController.java</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Controller;
+<span class="hljs-keyword">import</span> org.springframework.web.bind.annotation.*;
+
+<span class="hljs-keyword">import</span> hello.User;
+<span class="hljs-keyword">import</span> hello.UserRepository;
+
+<span class="hljs-meta">@Controller</span> <span class="hljs-comment">// &#x8868;&#x660E;&#x8BE5;&#x7C7B;&#x4E3A; Controller</span>
+<span class="hljs-meta">@RequestMapping</span>(path=<span class="hljs-string">&quot;/demo&quot;</span>) <span class="hljs-comment">// url&#x4E3A; /demo</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainController</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> UserRepository userRepository;
+
+    <span class="hljs-meta">@GetMapping</span>(path=<span class="hljs-string">&quot;/add&quot;</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@ResponseBody</span> <span class="hljs-function">String <span class="hljs-title">addNewUser</span><span class="hljs-params">(@RequestParam String name
+            , @RequestParam String email)</span></span>{
+        User n = <span class="hljs-keyword">new</span> User();
+        n.setName(name);
+        n.setEmail(email);
+        userRepository.save(n);
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Saved&quot;</span>;
+
+    }
+
+    <span class="hljs-meta">@GetMapping</span>(path = <span class="hljs-string">&quot;/all&quot;</span>)
+    <span class="hljs-keyword">public</span> <span class="hljs-meta">@ResponseBody</span> <span class="hljs-function">Iterable&lt;User&gt; <span class="hljs-title">getAllUsers</span><span class="hljs-params">()</span></span>{
+        <span class="hljs-keyword">return</span> userRepository.findAll();
+    }
+}
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x6307;&#x5B9A; <code>GET</code>,<code>PUT</code>,<code>POST</code>&#x7B49;&#x7B49;, &#x56E0;&#x4E3A; <code>@GetMapping</code> &#x662F;&#x4E00;&#x4E2A;&#x5FEB;&#x6377;&#x65B9;&#x5F0F; <code>@RequestMapping(method=GET)</code>. <code>@RequestMapping</code>&#x65B9;&#x6CD5;&#x9ED8;&#x8BA4;&#x6620;&#x5C04;&#x6240;&#x6709;HTTP&#x65B9;&#x6CD5;. &#x4F7F;&#x7528;<code>@RequestMapping(method=GET)</code> &#x6216;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x7F29;&#x5C0F;&#x6620;&#x5C04;.</p>
+<h2 id="&#x6253;&#x5305;"><a name="&#x6253;&#x5305;" class="anchor-navigation-ex-anchor" href="#&#x6253;&#x5305;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6253;&#x5305;</h2>
+<p>Although it is possible to package this service as a traditional WAR file for deployment to an external application server, the simpler approach demonstrated below creates a standalone application. You package everything in a single, executable JAR file, driven by a good old Java main() method. Along the way, you use Spring&#x2019;s support for embedding the Tomcat servlet container as the HTTP runtime, instead of deploying to an external instance.</p>
+<p><code>src/main/java/hello/Application.java</code></p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">import</span> org.springframework.boot.SpringApplication;
+<span class="hljs-keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;
+
+<span class="hljs-meta">@SpringBootApplication</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Application</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String [] args)</span></span>{
+        SpringApplication.run(Application.class, args);
+    }
+}
+</code></pre>
+<p>&#x6253;&#x6210;<code>JAR</code>&#x5305;</p>
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4F7F;&#x7528; <code>Gradle</code> &#x6216; <code>Maven</code>. &#x6216;&#x8005;&#x4F60;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x6210;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6240;&#x6709;&#x4F9D;&#x8D56;, &#x7C7B;, &#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;<code>JAR</code>&#x5305;, &#x7136;&#x540E;&#x8FD0;&#x884C;. &#x8FD9;&#x4F1A;&#x4FBF;&#x4E8E;&#x4F20;&#x8F93;, &#x7248;&#x672C;&#x663E;&#x793A;, &#x4EE5;&#x53CA;&#x5C06;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x6210;&#x4E00;&#x4E2A;&#x5E94;&#x7528;, &#x8D2F;&#x7A7F;&#x6574;&#x4E2A;&#x5F00;&#x53D1;&#x5468;&#x671F;, &#x90E8;&#x7F72;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x73AF;&#x5883;&#x7B49;&#x7B49;.</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5728;&#x4F7F;&#x7528;<code>Gradle</code>, &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD0;&#x884C;<code>./gradlew bootRun</code> &#x6765;&#x8FD0;&#x884C;. &#x6216;&#x8005;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>./gradlew build</code> &#x6784;&#x5EFA;<code>JAR</code>&#x5305; . &#x7136;&#x540E;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x8FD0;&#x884C;jar&#x5305;:</p>
+<pre><code>java -jar build/libs/gs-accessing-data-mysql-0.1.0.jar
+</code></pre><p>&#x5982;&#x679C;&#x4F60;&#x4F7F;&#x7528;<code>Maven</code>, &#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>./mvnw spring-boot:run</code> &#x8FD0;&#x884C;&#x5E94;&#x7528;. &#x6216;&#x8005;&#x4F7F;&#x7528; <code>./mvnw clean package</code> &#x6253;&#x5305;, &#x8FD0;&#x884C;:</p>
+<pre><code>java -jar target/gs-accessing-data-mysql-0.1.0.jar
+</code></pre><blockquote>
+<p>&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x53EF;&#x6267;&#x884C;&#x7684;<code>JAR</code>&#x5305;. &#x4F60;&#x4E5F;&#x53EF;&#x4EE5;&#x6784;&#x5EFA;&#x4F20;&#x7EDF;&#x7684; <code>WAR</code> &#x5305;.</p>
+</blockquote>
+<p>&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x56FD;&#x4F1A;&#x6253;&#x5370;&#x65E5;&#x5FD7;, &#x670D;&#x52A1;&#x4F1A;&#x5728;&#x51E0;&#x79D2;&#x949F;&#x540E;&#x542F;&#x52A8;.</p>
+<h2 id="&#x6D4B;&#x8BD5;&#x5E94;&#x7528;"><a name="&#x6D4B;&#x8BD5;&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x6D4B;&#x8BD5;&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D4B;&#x8BD5;&#x5E94;&#x7528;</h2>
+<p>&#x4F7F;&#x7528; <code>curl</code> &#x6216;&#x8005;&#x6D4F;&#x89C8;&#x5668;&#x6D4B;&#x8BD5;. &#x73B0;&#x5728;&#x6709;2&#x4E2A; <code>REST Web Services</code></p>
+<p><a href="localhost:8080/demo/all" target="_blank">localhost:8080/demo/all</a> This gets all data <a href="localhost:8080/demo/add" target="_blank">localhost:8080/demo/add</a> This adds one user to the data</p>
+<pre><code>curl &apos;localhost:8080/demo/add?name=First&amp;email=someemail@someemailprovider.com&apos;
+</code></pre><p>&#x4F1A;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x56DE;&#x5E94;</p>
+<pre><code>Saved
+</code></pre><p><code>curl &apos;localhost:8080/demo/all&apos;</code></p>
+<p>&#x4F1A;&#x5F97;&#x5230;&#x5982;&#x4E0B;&#x56DE;&#x5E94;</p>
+<pre><code>[{&quot;id&quot;:1,&quot;name&quot;:&quot;First&quot;,&quot;email&quot;:&quot;someemail@someemailprovider.com&quot;}]
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tmp.html" class="navigation navigation-prev " aria-label="Previous page: tmp">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="异常处理.html" class="navigation navigation-next " aria-label="Next page: 异常处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用Spring访问mysql","level":"1.6.4","depth":2,"next":{"title":"异常处理","level":"1.6.5","depth":2,"path":"04-Spring/异常处理.md","ref":"04-Spring/异常处理.md","articles":[]},"previous":{"title":"tmp","level":"1.6.3","depth":2,"path":"04-Spring/tmp.md","ref":"04-Spring/tmp.md","articles":[]},"dir":"ltr"},"config":{"plugins":["toggle-chapters","theme-comscore","splitter","-sharing","github","editlink","anchor-navigation-ex-toc@0.0.8","-lunr","-search","search-plus"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/yangjinjie/notes"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/yangjinjie/notes/blob/master/java"},"splitter":{},"anchor-navigation-ex-toc":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-comscore":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{},"search-plus":{}},"theme":"default","author":"YJJ","pdf":{"pageBreaksBefore":"/","headerTemplate":null,"paperSize":"a4","margin":{"right":62,"left":62,"top":36,"bottom":36},"fontSize":18,"fontFamily":"Arial","footerTemplate":null,"chapterMark":"pagebreak","pageNumbers":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Notes","links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"notes":"https://yangjinjie.github.io/notes/","python":"https://yangjinjie.github.io/python_notes/","java":"https://yangjinjie.github.io/java_notes/"}},"gitbook":"*","description":"Notes","extension":null},"file":{"path":"04-Spring/使用Spring访问mysql.md","mtime":"2018-05-22T08:08:37.376Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-22T08:51:12.832Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-editlink/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
